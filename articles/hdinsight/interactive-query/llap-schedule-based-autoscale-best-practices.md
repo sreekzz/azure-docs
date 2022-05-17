@@ -2,7 +2,7 @@
 title: HDInsight Interactive Query Autoscale(Schedule-Based) Guide and Best Practices
 description: LLAP Autoscale Guide and Best Practices 
 ms.service: hdinsight
-ms.topic: troubleshooting
+ms.topic: Quickstarts
 author: rishikesh.mohanty
 ms.author: mohantyr
 ms.reviewer: HDI HiveLLAP Team
