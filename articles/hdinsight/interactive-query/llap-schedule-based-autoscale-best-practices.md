@@ -49,7 +49,7 @@ Feature Supportability with HDInsight 4.0 Interactive Query(LLAP) Autoscale
 
 ```
 
-3. [Enable and Configure Schedule-BAsed Autoscale](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-autoscale-clusters#create-a-cluster-with-schedule-based-autoscaling)
+3. [Enable and Configure Schedule-Based Autoscale](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-autoscale-clusters#create-a-cluster-with-schedule-based-autoscaling)
 
 
 > [!NOTE]  
