@@ -95,7 +95,7 @@ These configs are updated to make sure if autoscale is disabled or LLAP Service 
 
 
 #### **Next Steps**
-If the above guidelines didn't resolve your query, visit one of the following...
+If the above guidelines didn't resolve your query, visit one of the following.
 
 * Get answers from Azure experts through [Azure Community Support](https://azure.microsoft.com/support/community/).
 
