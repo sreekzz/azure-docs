@@ -3,10 +3,10 @@ title: HDInsight Interactive Query Autoscale(bchedule-based) guide and best prac
 description: LLAP Autoscale Guide and Best Practices 
 ms.service: hdinsight
 ms.topic: quickstart
-author: rishikeshmohanty
-ms.author: mohantyr
+author: yeturis
+ms.author: sairamyeturi
 ms.reviewer: HDI HiveLLAP Team
-ms.date: 05/25/2022
+ms.date: 07/09/2022
 ---
 
 # Azure HDInsight interactive query cluster (Hive LLAP) schedule based autoscale
