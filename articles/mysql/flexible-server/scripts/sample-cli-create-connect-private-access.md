@@ -4,6 +4,7 @@ description: This Azure CLI sample script shows how to create a Azure Database f
 author: shreyaaithal
 ms.author: shaithal
 ms.service: mysql
+ms.subservice: flexible-server
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
@@ -19,7 +20,7 @@ This sample CLI script creates an Azure Database for MySQL - Flexible Server in 
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/flexible-server-free-trial-note.md)]
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../../../includes/azure-cli-prepare-your-environment.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](~/articles/reusable-content/azure-cli/azure-cli-prepare-your-environment.md)]
 
 ## Sample script
 
@@ -36,9 +37,9 @@ Use the following steps to test connectivity to the MySQL server from the VM by 
 1. To SSH into the VM, start by getting the public IP address and then use MySQL tools to connect
 
    ```bash
-   publicIp=$(az vm list-ip-addresses --resource-group $resourceGroup --name $vm --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" --output tsv)
+   PUBLIC_IP=$(az vm list-ip-addresses --resource-group $RESOURCE_GROUP --name $VM --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" --output tsv)
    
-   ssh azureuser@$publicIp
+   ssh azureuser@$PUBLIC_IP
    ```
 
 1. Download MySQL tools and connect to the server. Substitute <server_name> and <admin_user> with your values.
@@ -57,7 +58,7 @@ Use the following steps to test connectivity to the MySQL server from the VM by 
 [!INCLUDE [cli-clean-up-resources.md](../../../../includes/cli-clean-up-resources.md)]
 
 ```azurecli
-az group delete --name $resourceGroup
+az group delete --name $RESOURCE_GROUP
 ```
 
 ## Sample reference
@@ -66,12 +67,12 @@ This script uses the following commands. Each command in the table links to comm
 
 | **Command** | **Notes** |
 |---|---|
-|[az group create](/cli/azure/group#az_group_create)|Creates a resource group in which all resources are stored|
-|[az mysql flexible-server create](/cli/azure/mysql/flexible-server#az_mysql_flexible_server_create)|Creates a Flexible Server that hosts the databases.|
-|[az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create)|Creates a subnet within the VNet.|
-|[az vm create](/cli/azure/vm#az_vm_create)|Creates an Azure Virtual Machine.|
-|[az vm open-port](/cli/azure/vm#az_vm_open_port)|Opens a VM to inbound traffic on specified ports.|
-|[az group delete](/cli/azure/group#az_group_delete) | Deletes a resource group including all nested resources.|
+|[az group create](/cli/azure/group#az-group-create)|Creates a resource group in which all resources are stored|
+|[az mysql flexible-server create](/cli/azure/mysql/flexible-server#az-mysql-flexible-server-create)|Creates a Flexible Server that hosts the databases.|
+|[az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create)|Creates a subnet within the VNet.|
+|[az vm create](/cli/azure/vm#az-vm-create)|Creates an Azure Virtual Machine.|
+|[az vm open-port](/cli/azure/vm#az-vm-open-port)|Opens a VM to inbound traffic on specified ports.|
+|[az group delete](/cli/azure/group#az-group-delete) | Deletes a resource group including all nested resources.|
 
 ## Next steps
 

@@ -2,7 +2,10 @@
 title: Create and add a virtual machine to a lab
 description: Learn how to use the Azure portal to add a virtual machine (VM) to a lab in Azure DevTest Labs. Configure basic settings, artifacts, and advanced settings.
 ms.topic: how-to
-ms.date: 03/03/2022
+ms.author: rosemalcolm
+author: RoseHJM
+ms.date: 05/22/2023
+ms.custom: UpdateFrequency2
 ---
 
 # Create lab virtual machines in Azure DevTest Labs
@@ -40,7 +43,7 @@ You need at least [user](devtest-lab-add-devtest-user.md#devtest-labs-user) acce
 <a name="add-artifacts-during-installation"></a>
 ## Add optional artifacts
 
-Artifacts are tools, actions, or software you can add to lab VMs. You can add artifacts to VMs from the [DevTest Labs public artifact repository](https://github.com/Azure/azure-devtestlab/Artifacts), or from private artifact repositories connected to the lab. For more information, see [Add artifacts to DevTest Labs VMs](add-artifact-vm.md).
+Artifacts are tools, actions, or software you can add to lab VMs. You can add artifacts to VMs from the [DevTest Labs public artifact repository](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts), or from private artifact repositories connected to the lab. For more information, see [Add artifacts to DevTest Labs VMs](add-artifact-vm.md).
 
 To add or modify artifacts during VM creation:
 
@@ -80,10 +83,20 @@ Or, if you chose **Make this machine claimable** during VM creation, select **Cl
 
 :::image type="content" source="./media/devtest-lab-add-vm/portal-lab-vm-creation-status.png" alt-text="Lab VM creation status page.":::
 
+When you create a VM in DevTest Labs, you're given permission to access that VM. You can view the VM both on the labs page and on the **Virtual Machines** page. Users assigned to the **DevTest Labs Owner** role can see all VMs that were created in the lab on the lab's **All Virtual Machines** page. However, users who have the **DevTest Labs User** role are not automatically granted read access to VM resources that other users have created. So, those VMs are not displayed on the **Virtual Machines** page.
+
+## Move existing Azure VMs into a DevTest Labs lab
+To copy your existing VMs to DevTest Labs:
+          
+   1.	Copy the VHD file of your existing VM by using a [Windows PowerShell script](https://github.com/Azure/azure-devtestlab/blob/master/samples/DevTestLabs/Scripts/CopyVirtualMachines/CopyAzVHDFromVMToLab.ps1).
+   2.	Create the [custom image](devtest-lab-create-template.md) inside your DevTest Labs lab.
+   3.	Create a VM in the lab from your custom image.
+          
+
 <a name="add-artifacts-after-installation"></a>
 ## Next steps
 
 - [Add artifacts to VMs after creation](add-artifact-vm.md#add-artifacts-to-vms-from-the-azure-portal).
 - Create DevTest Labs VMs by using [PowerShell](devtest-lab-vm-powershell.md), [Azure CLI](devtest-lab-vmcli.md), an [ARM template](devtest-lab-use-resource-manager-template.md), or from a [shared image gallery](add-vm-use-shared-image.md).
-- Explore the DevTest Labs public repositories of [artifacts](https://github.com/Azure/azure-devtestlab/Artifacts), [environments](https://github.com/Azure/azure-devtestlab/Environments), and [QuickStart ARM templates](https://github.com/Azure/azure-devtestlab/samples/DevTestLabs/QuickStartTemplates).
+- Explore the DevTest Labs public repositories of [artifacts](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts), [environments](https://github.com/Azure/azure-devtestlab/tree/master/Environments), and [QuickStart ARM templates](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).
 

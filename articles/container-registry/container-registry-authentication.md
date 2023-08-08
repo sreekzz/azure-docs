@@ -2,8 +2,9 @@
 title: Registry authentication options
 description: Authentication options for a private Azure container registry, including signing in with an Azure Active Directory identity, using service principals, and using optional admin credentials.
 ms.topic: article
-ms.date: 06/16/2021
-ms.custom: devx-track-azurepowershell
+author: tejaswikolli-web
+ms.author: tejaswikolli
+ms.date: 10/11/2022
 ---
 
 # Authenticate with an Azure container registry
@@ -35,7 +36,7 @@ The following table lists available authentication methods and typical scenarios
 
 ### [Azure CLI](#tab/azure-cli)
 
-When working with your registry directly, such as pulling images to and pushing images from a development workstation to a registry you created, authenticate by using your individual Azure identity. Sign in to the [Azure CLI](/cli/azure/install-azure-cli) with [az login](/cli/azure/reference-index#az_login), and then run the [az acr login](/cli/azure/acr#az_acr_login) command:
+When working with your registry directly, such as pulling images to and pushing images from a development workstation to a registry you created, authenticate by using your individual Azure identity. Sign in to the [Azure CLI](/cli/azure/install-azure-cli) with [az login](/cli/azure/reference-index#az-login), and then run the [az acr login](/cli/azure/acr#az-acr-login) command:
 
 ```azurecli
 az login
@@ -78,7 +79,7 @@ TOKEN=$(az acr login --name <acrName> --expose-token --output tsv --query access
 Then, run `docker login`, passing `00000000-0000-0000-0000-000000000000` as the username and using the access token as password:
 
 ```console
-docker login myregistry.azurecr.io --username 00000000-0000-0000-0000-000000000000 --password $TOKEN
+docker login myregistry.azurecr.io --username 00000000-0000-0000-0000-000000000000 --password-stdin <<< $TOKEN
 ```
 Likewise, you can use the token returned by `az acr login` with the `helm registry login` command to authenticate with the registry:
 
@@ -112,6 +113,8 @@ Using `Connect-AzContainerRegistry` with Azure identities provides [Azure role-b
 
 If you assign a [service principal](../active-directory/develop/app-objects-and-service-principals.md) to your registry, your application or service can use it for headless authentication. Service principals allow [Azure role-based access control (Azure RBAC)](../role-based-access-control/role-assignments-portal.md) to a registry, and you can assign multiple service principals to a registry. Multiple service principals allow you to define different access for different applications.
 
+ACR authentication token gets created upon login to the ACR, and is refreshed upon subsequent operations. The time to live for that token is 3 hours.
+
 The available roles for a container registry include:
 
 * **AcrPull**: pull
@@ -144,7 +147,7 @@ For recommended practices to manage login credentials, see the [docker login](ht
 
 ### [Azure CLI](#tab/azure-cli)
 
-To enable the admin user for an existing registry, you can use the `--admin-enabled` parameter of the [az acr update](/cli/azure/acr#az_acr_update) command in the Azure CLI:
+To enable the admin user for an existing registry, you can use the `--admin-enabled` parameter of the [az acr update](/cli/azure/acr#az-acr-update) command in the Azure CLI:
 
 ```azurecli
 az acr update -n <acrName> --admin-enabled true

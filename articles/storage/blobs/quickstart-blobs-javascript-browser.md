@@ -1,11 +1,12 @@
 ---
 title: "Quickstart: Azure Blob storage library v12 - JS Browser"
+titleSuffix: Azure Storage
 description: In this quickstart, you learn how to use the Azure Blob storage npm client library version 12 for JavaScript in a browser. You create a container and an object in Blob storage. Next, you learn how to list all of the blobs in a container. Finally, you learn how to delete blobs and delete a container.
 author: normesta
+
 ms.author: normesta
 ms.date: 02/25/2022
 ms.service: storage
-ms.subservice: blobs
 ms.topic: quickstart
 ms.devlang: javascript
 ms.custom: devx-track-js, mode-api
@@ -28,7 +29,7 @@ The [**example code**](https://github.com/Azure-Samples/AzureStorageSnippets/tre
 
 Additional resources:
 
-[API reference](/javascript/api/@azure/storage-blob) | [Library source code](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Package (npm)](https://www.npmjs.com/package/@azure/storage-blob) | [Samples](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+[API reference](/javascript/api/@azure/storage-blob) | [Library source code](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Package (npm)](https://www.npmjs.com/package/@azure/storage-blob) | [Samples](../common/storage-samples-javascript.md?toc=/azure/storage/blobs/toc.json#blob-samples)
 
 ## Prerequisites
 
@@ -105,6 +106,9 @@ Follow these steps to get the Blob service SAS URL:
 1. Scroll down further and locate the **Blob service SAS URL** field
 1. Select the **Copy to clipboard** button at the far-right end of the **Blob service SAS URL** field.
 1. Save the copied URL somewhere for use in an upcoming step.
+
+> [!NOTE]
+> The SAS token returned by the portal does not include the delimiter character ('?') for the URL query string. If you are appending the SAS token to a resource URL, remember to append the delimiter character to the resource URL before appending the SAS token.
 
 ## Create the JavaScript project
 
@@ -270,7 +274,7 @@ This code calls the [ContainerClient.deleteBlob](/javascript/api/@azure/storage-
 
 ## Use the storage emulator
 
-This quickstart created a container and blob on the Azure cloud. You can also use the Azure Blob storage npm package to create these resources locally on the [Azure Storage emulator](/azure/storage/common/storage-use-emulator) for development and testing. 
+This quickstart created a container and blob on the Azure cloud. You can also use the Azure Blob storage npm package to create these resources locally on the [Azure Storage emulator](../common/storage-use-emulator.md) for development and testing. 
 
 ## Clean up resources
 

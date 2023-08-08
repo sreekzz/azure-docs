@@ -7,7 +7,7 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 03/03/2022
+ms.date: 10/27/2022
 ms.author: alkohli
 # Customer intent: As an IT admin, I need to understand how to activate Azure Stack Edge Pro 2 so I can use it to transfer data to Azure. 
 ---
@@ -43,7 +43,7 @@ Before you configure and set up your Azure Stack Edge Pro 2, make sure that:
 
     ![Screenshot of local web UI with "Activate" highlighted in the Activation tile.](./media/azure-stack-edge-pro-2-deploy-activate/activate-1.png)
     
-3. In the **Activate** pane, enter the **Activation key** that you got in [Get the activation key for Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-prep.md#get-the-activation-key).
+3. In the **Activate** pane, enter the **Activation key** from [Get the activation key for Azure Stack Edge](azure-stack-edge-gpu-deploy-prep.md#get-the-activation-key).
 
 4. Select **Activate**.
 
@@ -120,4 +120,4 @@ In this tutorial, you learned about:
 To learn how to deploy workloads on your Azure Stack Edge device, see:
 
 > [!div class="nextstepaction"]
-> [Configure compute to deploy IoT Edge and Kubernetes workloads on Azure Stack Edge](./azure-stack-edge-pro-2-deploy-configure-compute.md)
+> [Configure compute to deploy IoT Edge and Kubernetes workloads on Azure Stack Edge Pro 2](./azure-stack-edge-pro-2-deploy-configure-compute.md)
