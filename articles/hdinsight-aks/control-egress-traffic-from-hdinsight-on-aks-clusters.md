@@ -3,7 +3,7 @@ title: Control network traffic from HDInsight on AKS Cluster pools and cluster
 description: A guide to configure and manage inbound and outbound network connections from HDInsight on AKS.
 ms.service: hdinsight-aks
 ms.topic: how-to
-ms.date: 04/12/2024
+ms.date: 05/21/2024
 ---
 
 # Control network traffic from HDInsight on AKS Cluster pools and clusters
@@ -248,12 +248,16 @@ The private FQDN will be assigned to clusters with the private ingress enabled o
 
 ### Reference
 
+- [Getting started with Private Clusters on HDInsight on AKS for securing your analytics workloads](https://techcommunity.microsoft.com/t5/analytics-on-azure-blog/getting-started-with-private-clusters-on-hdinsight-on-aks-for/ba-p/4138624).
+
 - [Azure virtual network traffic routing](/azure/virtual-network/virtual-networks-udr-overview).
 
 - [Azure Virtual Network peering](/azure/virtual-network/virtual-network-peering-overview).
 
-- [Outbound traffic on HDInsight on AKS - Azure HDInsight on AKS](./required-outbound-traffic.md)
+- [Outbound traffic on HDInsight on AKS - Azure HDInsight on AKS](./required-outbound-traffic.md).
 
 - [Outbound network and FQDN rules for Azure Kubernetes Service (AKS) clusters - Azure Kubernetes Service](/azure/aks/outbound-rules-control-egress#azure-global-required-network-rules).
+
+  
 
 
