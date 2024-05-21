@@ -5,7 +5,7 @@ ms.author: sairamyeturi
 author: yeturis
 ms.service: hdinsight
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 12/05/2024
 ---
 
 # Manually scale Azure HDInsight clusters
@@ -64,10 +64,10 @@ The impact of changing the number of data nodes varies for each type of cluster 
     ```
 
     For more information on using the HBase shell, see [Get started with an Apache HBase example in HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md).
+  
+     > [!NOTE]
+     > Not applicable for Kafka clusters.
 
-* Kafka
-
-    You should rebalance partition replicas after scaling operations. For more information, see the [High availability of data with Apache Kafka on HDInsight](./kafka/apache-kafka-high-availability.md) document.
 
 * Apache Hive LLAP
 
